@@ -1,0 +1,17 @@
+type Player = 
+ record {
+   id: nat;
+   name: text;
+   passingYards: nat;
+   position: text;
+   receivingYards: nat;
+   rushingYards: nat;
+   team: text;
+   touchdowns: nat;
+ };
+service : {
+  addPlayer: (text, text, text) -> (nat);
+  getAllPlayers: () -> (vec Player) query;
+  getPlayer: (nat) -> (opt Player) query;
+  updateStats: (nat, nat, nat, nat, nat) -> (bool);
+}
